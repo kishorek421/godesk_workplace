@@ -45,25 +45,29 @@ class HomePage extends GetView<HomeController> {
                     const SizedBox(
                       width: 5,
                     ),
-                    Wrap(
-                      crossAxisAlignment: WrapCrossAlignment.start,
-                      children: [
-                        PrimaryText(
-                          ' ${controller.customerDetailsModel.value.firstName ?? "-"}',
-                          //textOverflow: TextOverflow.clip,
-                          fontSize: 25,
-                          fontWeight: AppThemes.fontSemiBold,
-                          fontColor: AppColors.black800Color,
-                        ),
-                        PrimaryText(
-                          ' ${controller.customerDetailsModel.value.lastName ?? ""}👋',
-                          //textOverflow: TextOverflow.clip,
-                          fontSize: 25,
-                          fontWeight: AppThemes.fontSemiBold,
-                          fontColor: AppColors.black800Color,
-                        ),
-                      ],
-                    ),
+                    Obx(() {
+                      return Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.start,
+                        children: [
+                          PrimaryText(
+                            ' ${controller.customerDetailsModel.value
+                                .firstName ?? "-"}',
+                            //textOverflow: TextOverflow.clip,
+                            fontSize: 25,
+                            fontWeight: AppThemes.fontSemiBold,
+                            fontColor: AppColors.black800Color,
+                          ),
+                          PrimaryText(
+                            ' ${controller.customerDetailsModel.value
+                                .lastName ?? ""}👋',
+                            //textOverflow: TextOverflow.clip,
+                            fontSize: 25,
+                            fontWeight: AppThemes.fontSemiBold,
+                            fontColor: AppColors.black800Color,
+                          ),
+                        ],
+                      );
+                    }),
                   ],
                 ),
                 const SizedBox(
@@ -151,7 +155,7 @@ class HomePage extends GetView<HomeController> {
                                   Get.to(
                                     RaiseTicketPage(
                                       customerId: controller
-                                              .customerDetailsModel.value.id ??
+                                          .customerDetailsModel.value.id ??
                                           "",
                                     ),
                                   );

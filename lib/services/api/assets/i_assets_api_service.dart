@@ -14,7 +14,7 @@ abstract class IAssetsApiService extends IBaseService {
 
   Future<BaseResponseModel<AssetModelListModel?>> getAssetModelList();
 
-  Future<BaseResponseModel<AssetInUseListModel?>> getAssetInUseList();
+  Future<BaseResponseModel<AssetInUseListModel?>> getAssetInUseList(String customerId);
 
   Future<BaseResponseModel<AssetMasterListModel?>> getAssetMasterList();
 

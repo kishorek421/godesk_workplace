@@ -44,7 +44,7 @@ class CustomerLeadApiService extends ICustomerLeadApiService {
   @override
   Future<BaseResponseModel<CustomerLeadDetailsModel?>>
       updateCustomerLeadDetails(CustomerLeadDetailsModel updateCustomerLeadData,
-          String? orgImagePath) async {
+          String? orgImagePath, bool isNew) async {
     var token = await getToken();
 
     if (token == null) {
@@ -92,12 +92,13 @@ class CustomerLeadApiService extends ICustomerLeadApiService {
               contentType: "multipart/form-data",
             )
           : null,
+      "isCustomerLead": !isNew,
     });
 
     try {
-      var params = "id=$customerLeadId";
-      var response = await put(
-        "${ApiEndpoints.updateCustomerLeadDetails}?$params",
+      // var params = "id=$customerLeadId";
+      var response = await post(
+        ApiEndpoints.createCustomer,
         requestData,
         headers: {"Authorization": "Bearer $token"},
       );

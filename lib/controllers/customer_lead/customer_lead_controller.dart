@@ -353,7 +353,7 @@ class CustomerLeadController extends GetxController {
   }
 
   Future<BaseResponseModel<CustomerLeadDetailsModel?>>
-      updateCustomerLeadDetails() {
+      updateCustomerLeadDetails(bool isNew) {
     isLoading.value = true;
     var customerLeadModel = CustomerLeadDetailsModel(
       firstName: firstNameTEController.text,
@@ -381,6 +381,7 @@ class CustomerLeadController extends GetxController {
       selectedOrgImagePath.value.startsWith("https://")
           ? null
           : selectedOrgImagePath.value,
+      isNew,
     );
   }
 }

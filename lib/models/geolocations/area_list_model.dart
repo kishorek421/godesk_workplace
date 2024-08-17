@@ -66,7 +66,7 @@ class AreaListItemModel {
     countryCode = json['countryCode'];
     areaName = json['areaName'];
     pincodeId = json['pincodeId'];
-    pincode = json['pincode'];
+    pincode = json['pincode']?.toString();
   }
 
   String? id;

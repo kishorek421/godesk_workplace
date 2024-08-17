@@ -158,12 +158,12 @@ class OrganizationEditProfilePage extends GetView<CustomerLeadController> {
                                 color: AppColors.textColor,
                               ),
                               controller: controller.lastNameTEController,
-                              // validator: (value) {
-                              //   if (value == null || value.length < 3) {
-                              //     return 'Last name should be at least 3 characters';
-                              //   }
-                              //   return null;
-                              // },
+                              validator: (value) {
+                                if (value == null || value.length < 3) {
+                                  return 'Last name should be at least 3 characters';
+                                }
+                                return null;
+                              },
                               cardMode: CardMode.none.obs,
                               obscureText: false.obs,
                               verticalContentPadding: 0,
@@ -1049,7 +1049,7 @@ class OrganizationEditProfilePage extends GetView<CustomerLeadController> {
                                 var formState = _formKey.currentState;
                                 if (formState != null && formState.validate()) {
                                   controller
-                                      .updateCustomerLeadDetails()
+                                      .updateCustomerLeadDetails(isNew)
                                       .then((value) async {
                                     var id = value.data?.id;
                                     if (value.success && id != null) {

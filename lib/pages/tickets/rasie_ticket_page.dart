@@ -24,6 +24,9 @@ class RaiseTicketPage extends GetView<RaiseTicketController> {
 
   RaiseTicketPage({super.key, required this.customerId}) {
     Get.put(RaiseTicketController());
+
+    controller.fetchAssets(customerId);
+    controller.fetchIssueTypes();
   }
 
   @override

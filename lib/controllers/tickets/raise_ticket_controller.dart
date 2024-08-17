@@ -37,8 +37,7 @@ class RaiseTicketController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    fetchAssets();
-    fetchIssueTypes();
+
   }
 
   String? validateFields() {
@@ -71,10 +70,10 @@ class RaiseTicketController extends GetxController {
     ));
   }
 
-  fetchAssets() async {
+  fetchAssets(String customerId) async {
     assetsInUseOptionsValueAndId.clear();
     assetsInUseOptionsIdAndValue.clear();
-    var response = await assetApiService.getAssetInUseList();
+    var response = await assetApiService.getAssetInUseList(customerId);
     if (response.success) {
       var data = response.data?.data;
       if (data != null) {

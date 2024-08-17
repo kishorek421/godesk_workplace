@@ -54,7 +54,7 @@ class SplashPage extends GetView<SplashController> {
             width: 150,
             height: 150,
             child: Image.asset(
-              AppImages.goDeskLogoPng,
+              AppImages.godeskBannerDark,
               width: 150,
               height: 150,
             ),

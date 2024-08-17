@@ -74,7 +74,7 @@ class AssetsApiService extends IAssetsApiService {
   }
 
   @override
-  Future<BaseResponseModel<AssetInUseListModel?>> getAssetInUseList() async {
+  Future<BaseResponseModel<AssetInUseListModel?>> getAssetInUseList(String customerId) async {
     var token = await getToken();
 
     if (token == null) {
@@ -85,8 +85,10 @@ class AssetsApiService extends IAssetsApiService {
       );
     }
 
+    var params = "customerId=$customerId";
+
     var response = await get(
-      ApiEndpoints.getAssetIsUseList,
+      "${ApiEndpoints.getAssetIsUseList}?$params",
       headers: {"Authorization": "Bearer $token"},
     );
 

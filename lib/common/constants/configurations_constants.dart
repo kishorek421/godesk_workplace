@@ -6,5 +6,5 @@ class ConfigurationsConstants {
   static const String typeOfOrgCategory = "TYPE_OF_ORG";
   static const String categoryOfOrgCategory = "CATEGORY_OF_ORG";
   static const String sizeOfOrgCategory = "SIZE_OF_ORG";
-  static const String customerLeadActiveKey = "CUSTOMER_LEAD_ACTIVE";
+  static const String customerLeadActiveKey = "ACTIVE";
 }

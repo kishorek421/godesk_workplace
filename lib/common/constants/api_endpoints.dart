@@ -11,13 +11,14 @@ class ApiEndpoints {
 
   // customer
   static String getCustomerDetailsById =
-      '${AppConfig.mainBaseUrl}/customers/view?id=30a0c5bc-64e1-40c8-8e9b-6b062e9adcfb';
+      '${AppConfig.mainBaseUrl}/customers/view';
 
   // customer lead
   static String getCustomerLeadDetailsById =
       '${AppConfig.mainBaseUrl}/customers/leads/view';
   static String updateCustomerLeadDetails =
       "${AppConfig.mainBaseUrl}/customers/leads/update";
+  static String createCustomer = "${AppConfig.mainBaseUrl}/customers/create";
 
   // tickets
   static const String raiseTicket =

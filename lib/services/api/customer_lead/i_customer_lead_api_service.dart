@@ -8,5 +8,5 @@ abstract class ICustomerLeadApiService extends IBaseService {
 
   Future<BaseResponseModel<CustomerLeadDetailsModel?>>
       updateCustomerLeadDetails(
-          CustomerLeadDetailsModel updateCustomerLeadData, String? orgImagePath);
+          CustomerLeadDetailsModel updateCustomerLeadData, String? orgImagePath, bool isNew);
 }
